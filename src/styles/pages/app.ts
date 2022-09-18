@@ -14,7 +14,7 @@ export const Header = styled('header', {
     width: '100%',
     maxWidth: '1180',
     magin: '0 auto',
-
+    
 })
 
 
