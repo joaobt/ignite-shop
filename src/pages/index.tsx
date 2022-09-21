@@ -39,8 +39,8 @@ export default function Home({ products }: HomeProps) {
     <HomeContainer ref={sliderRef} className='keen-slider'>
       {products.map(product => {
         return (
-          <Product  className="keen-slider__slider"key={product.id}>
-            <Image  width={520} height={480} alt="" src={camiseta1}/>
+          <Product key={product.id} className="keen-slider__slider">
+            <Image src={product.imageUrl} width={520} height={480} alt="" />
 
             <footer>
               <strong>{product.name}</strong>
@@ -57,7 +57,7 @@ export default function Home({ products }: HomeProps) {
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  /*await new Promise(resolve => setTimeout(resolve, 2000)) // servidor node next*/
+
   const response = await stripe.products.list({
     expand: ['data.default_price'],
   });
