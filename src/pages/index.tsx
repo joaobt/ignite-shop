@@ -49,7 +49,7 @@ export default function Home({ products }: HomeProps) {
       <Head>
         <title>Ignite Shop</title>
       </Head>
-      <Container ref={sliderRef} className="keen-slider">
+      <HomeContainer ref={sliderRef} className="keen-slider">
         {products.map((product) => {
           return (
             <Link href={`/product/${product.id}`} key={product.id}>
@@ -64,7 +64,7 @@ export default function Home({ products }: HomeProps) {
             </Link>
           );
         })}
-      </Container>
+      </HomeContainer>
     </>
   );
 }
